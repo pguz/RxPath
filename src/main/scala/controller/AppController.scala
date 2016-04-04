@@ -1,5 +1,6 @@
 package controller
 
+import controller.paradigm.reactive.SodiumPathController
 import view.ViewApi
 
 import scala.swing.Reactions
@@ -15,14 +16,20 @@ class AppController(view: ViewApi, pathReactions: Reactions, configReactions: Re
 
   configReactions += {
     case ButtonClicked(button) => button.name match {
+
       case Paradigms.COORD_IMPERATIVE_TITLE => {
         pathController.stop()
         pathController = new imperative.ImperPathController(view, pathReactions)
       }
 
-      case Paradigms.COORD_REACTIVE_TITLE => {
+      case Paradigms.COORD_REACTIVE_RX_TITLE => {
         pathController.stop()
-        pathController = new reactive.ReactPathController(view)
+        pathController = new reactive.RxPathController(view)
+      }
+
+      case Paradigms.COORD_REACTIVE_SODIUM_TITLE => {
+        pathController.stop()
+        pathController = new SodiumPathController(view)
       }
     }
   }

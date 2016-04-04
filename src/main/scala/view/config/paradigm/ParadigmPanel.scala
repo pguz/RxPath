@@ -21,14 +21,20 @@ class ParadigmPanel extends BoxPanel(Orientation.Vertical) {
     selected = true
   }
 
-  val btnReactive = new RadioButton() {
-    name = Paradigms.COORD_REACTIVE_TITLE
-    text = Paradigms.COORD_REACTIVE_TITLE
+  val btnReactiveRx = new RadioButton() {
+    name = Paradigms.COORD_REACTIVE_RX_TITLE
+    text = Paradigms.COORD_REACTIVE_RX_TITLE
+  }
+
+  val btnReactiveSodium = new RadioButton() {
+    name = Paradigms.COORD_REACTIVE_SODIUM_TITLE
+    text = Paradigms.COORD_REACTIVE_SODIUM_TITLE
   }
 
   val lstRadioButtons = List(
     btnImperative,
-    btnReactive
+    btnReactiveRx,
+    btnReactiveSodium
   )
 
   val btnGroupParadigm = new ButtonGroup {
@@ -36,9 +42,13 @@ class ParadigmPanel extends BoxPanel(Orientation.Vertical) {
   }
 
   val imperPanel = new ImperPanel(btnImperative)
-  val reactPanel = new ReactPanel(btnReactive)
+  val reactRxPanel = new ReactPanel(btnReactiveRx)
+  val reactSodiumPanel = new SodiumPanel(btnReactiveSodium)
 
-  contents += Swing.VStrut(5) += imperPanel += Swing.VStrut(5) += reactPanel += Swing.VStrut(5)
+  contents += Swing.VStrut(5) +=
+    imperPanel += Swing.VStrut(5) +=
+    reactRxPanel += Swing.VStrut(5) +=
+    reactSodiumPanel += Swing.VStrut(5)
 
   lstRadioButtons.foreach(listenTo(_))
 }

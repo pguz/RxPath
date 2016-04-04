@@ -11,11 +11,11 @@ import scala.swing.{Dimension, Frame, GridBagPanel}
 object RxPathFrame {
   val TITLE: String = "RxPath"
 
-  val DEFAULT_BOARD_WIDTH     :Int  = 640;
+  val DEFAULT_BOARD_WIDTH     :Int  = 800;
   val DEFAULT_CONFIG_WIDTH    :Int  = 0;
 
   val DEFAULT_WIDTH   :Int  = DEFAULT_BOARD_WIDTH + DEFAULT_CONFIG_WIDTH;
-  val DEFAULT_HEIGHT  :Int  = 480;
+  val DEFAULT_HEIGHT  :Int  = 640;
 }
 
 class RxPathFrame extends Frame with SwingApi {

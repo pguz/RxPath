@@ -47,6 +47,9 @@ class ImperPathController(view: ViewApi, reactions: Reactions) extends PathContr
     start()
   }
 
+  def pointToString(point: Point) =
+    "(" + point.x + ", " + point.y + ")"
+
   reactions += pressObserver += releaseObserver
 
   override def stop(): Unit = {
@@ -54,9 +57,5 @@ class ImperPathController(view: ViewApi, reactions: Reactions) extends PathContr
     reactions -= pressObserver -= releaseObserver -= moveObserver
     timer.stop()
   }
-
-
-  def pointToString(point: Point) =
-    "(" + point.x + ", " + point.y + ")"
 }
 

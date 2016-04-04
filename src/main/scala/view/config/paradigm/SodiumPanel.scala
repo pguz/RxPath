@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel
 
 import scala.swing._
 
-class ReactPanel(btnParadigm: RadioButton) extends BoxPanel(Orientation.Vertical) {
+class SodiumPanel(btnParadigm: RadioButton) extends BoxPanel(Orientation.Vertical) {
   border = scala.swing.Swing.EtchedBorder
 
   def setMouseDown(value: String, seconds: Long): Unit =
@@ -32,11 +32,11 @@ class ReactPanel(btnParadigm: RadioButton) extends BoxPanel(Orientation.Vertical
     new DefaultTableModel( new Array[Array[AnyRef]](0), Array[AnyRef]("Name", "Value", "Time") ) {
 
       override def isCellEditable(r: Int, c: Int): Boolean = false
-      addRow(Array[AnyRef]("obsMouseDown",      "null", "0"))
-      addRow(Array[AnyRef]("obsMouseUp",        "null", "0"))
-      addRow(Array[AnyRef]("obsMouseMove",      "null", "0"))
-      addRow(Array[AnyRef]("obsPathController", "null", "0"))
-      addRow(Array[AnyRef]("obsPath",           "null", "0"))
+      addRow(Array[AnyRef]("sMouseDown",      "null", "0"))
+      addRow(Array[AnyRef]("sMouseUp",        "null", "0"))
+      addRow(Array[AnyRef]("sMouseMove",      "null", "0"))
+      addRow(Array[AnyRef]("sPathController", "null", "0"))
+      addRow(Array[AnyRef]("sPath",           "null", "0"))
 
       val columnClass = Array(classOf[String], classOf[String], classOf[Long])
       override def getColumnClass(columnIndex: Int) = columnClass(columnIndex)
